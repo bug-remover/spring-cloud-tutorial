@@ -1,0 +1,16 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: client-service
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+#feign中自带hystrix功能，旧版本中默认打开
+feign:
+  hystrix:
+    enabled: true

@@ -10,7 +10,7 @@
 
 	<parent>
 		<groupId>com.liuliuge</groupId>
-		<artifactId>ribbon-tutorial</artifactId>
+		<artifactId>hystrix-tutorial</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 

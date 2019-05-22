@@ -19,7 +19,7 @@ public class UserController {
 
     @GetMapping("add")
     public String addUser(@RequestParam String name, HttpServletRequest request) {
-        return "client port is: " + request.getServerPort() + ", name is" + name;
+        return "client port is: " + request.getServerPort() + ", name is " + name;
     }
 
 }

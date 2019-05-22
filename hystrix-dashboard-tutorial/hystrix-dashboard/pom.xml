@@ -4,20 +4,24 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.liuliuge</groupId>
-	<artifactId>eureka-server</artifactId>
+	<artifactId>hystrix-dashboard</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<parent>
 		<groupId>com.liuliuge</groupId>
-		<artifactId>ribbon-tutorial</artifactId>
+		<artifactId>hystrix-tutorial</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-netflix-hystrix-dashboard</artifactId>
 		</dependency>
 	</dependencies>
 
