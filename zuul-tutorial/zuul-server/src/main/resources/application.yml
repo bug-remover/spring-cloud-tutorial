@@ -1,0 +1,64 @@
+#zuul路由配置
+zuul:
+  #通过prefix可以指定访问前缀
+  # prefix: /pre
+
+  routes:
+    zuul-gateway:
+      path: /user-service/**
+      serviceId: sc-user-service
+  host:
+    socket-timeout-millis: 600000
+    connect-timeout-millis: 600000
+  #指定敏感头信息，调服务的时候不传递
+  sensitive-headers: Cookie,Set-Cookie,Authorization
+  #开启重试
+  retryable: true
+
+
+  #忽略的服务，防止服务侵入
+  #  ignored-services: inner-user-service
+
+  #忽略的接口，可以屏蔽某些接口
+  #  ignored-patterns: /**/del/**
+
+
+#路由简化版本配置方式1
+#zuul:
+#  routes:
+#    user-service: /user-service/**
+
+#路由简化版本配置方式2,路径默认为serviceId
+#zuul:
+#  routes:
+#    user-service:
+
+#单实例url映射
+#zuul:
+#  routes:
+#    user-service:
+#      path: /user/**
+#      url: http://localhost:8080
+
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout: 
+          enabled: false
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 600000
+
+ribbon:
+  ConnectTimeout: 350000
+  ReadTimeout: 350000
+  #同一个服务重试的次数
+  MaxAutoRetries: 2
+  #切换相同服务的数量
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: true
+  okhttp:
+    enabled: true
