@@ -23,6 +23,7 @@
         <module>hystrix-tutorial</module>
         <module>hystrix-dashboard-tutorial</module>
         <module>zuul-tutorial</module>
+        <module>zuul-oauth2-tutorial</module>
     </modules>
 
 </project>
