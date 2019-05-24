@@ -24,6 +24,7 @@
         <module>hystrix-dashboard-tutorial</module>
         <module>zuul-tutorial</module>
         <module>zuul-oauth2-tutorial</module>
+        <module>spring-cloud-config-tutorial</module>
     </modules>
 
 </project>
